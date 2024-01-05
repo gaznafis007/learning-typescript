@@ -1,3 +1,5 @@
+import {UserInformation, UserInit} from "./common"
+
 type Message = string
 const message:Message= "Hello Typescript";
 let messageTwo=message.toLowerCase()
@@ -31,6 +33,15 @@ const requestHandler =(requestType:RequestType):[string] =>{
     return [requestType]
 }
 // console.log(requestHandler("GET"));
+
+let userInfo:UserInformation = {
+    userName: "Uzui Kokoshibo",
+    userId: 126789,
+    status: true
+}
+
+let userProfile = new UserInit("Uchiha", 1245, true)
+userProfile.display()
 
 class UserInfo {
     userName: string;
