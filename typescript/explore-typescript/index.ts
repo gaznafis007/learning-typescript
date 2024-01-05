@@ -50,12 +50,12 @@ const userExample = new UserInfo("exampleName",25,false)
 userExample.displayData()
 
 abstract class HypotheticalAbstractClass{
-    senderId: number;
-    isSenderActive: boolean;
-    receiverId: number;
-    isReceiverActive: boolean;
-    sendTime: string;
-    sendItems?: object[];
+    private senderId: number;
+    public isSenderActive: boolean;
+    private receiverId: number;
+    public isReceiverActive: boolean;
+    readonly sendTime: string;
+    protected sendItems?: object[];
 
     constructor(senderId:number, isSenderActive:boolean, receiverId:number, isReceiverActive:boolean, sendTime:string, sendItems:object[]){
         this.senderId = senderId;
@@ -66,6 +66,13 @@ abstract class HypotheticalAbstractClass{
         this.sendItems = sendItems;
     }
     abstract disp():void
+    setProtectedItem(protectedItem:object[]){
+        this.sendItems=protectedItem;
+        console.log(this.sendItems)
+    }
+    getProtectedItem(){
+        return this.sendItems
+    }
 }
 class SendMessage extends HypotheticalAbstractClass{
     
@@ -73,3 +80,7 @@ class SendMessage extends HypotheticalAbstractClass{
         console.log(`this is nice`)
     }
 }
+// modifier PUBLIC,PRIVATE,PROTECTED,READ ONLY
+// Protected can't inherit
+// Private limited in the class only ca not be extend but can be access through public method also can be get by public method of the class
+// Readonly cannot be modified
