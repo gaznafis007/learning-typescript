@@ -7,6 +7,16 @@ const removeStyle = document.getElementById("remove-style");
 const removeText = document.getElementById("remove-text");
 // const textPlacement = document.getElementById("generated-text") as HTMLElement;
 const section = document.getElementById("practice-section");
+const sectionHeader = document.getElementById('section-header');
+console.log(sectionHeader);
+console.log("hello DOM");
+sectionHeader.addEventListener('click', () => {
+    const text = sectionHeader.innerText;
+    sectionHeader.classList.add('color-red');
+    let insertedText = document.getElementById('inserted-text');
+    let previousText = insertedText.innerText;
+    insertedText.innerText = `${previousText} ${text}`;
+});
 colorBtn.addEventListener('click', () => {
     headingText.classList.add('color-red');
 });

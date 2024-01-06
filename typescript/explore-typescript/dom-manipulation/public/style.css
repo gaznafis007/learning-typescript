@@ -7,6 +7,9 @@
     padding: 2rem;
     background-color: blanchedalmond;
 }
+#section-header{
+    cursor: pointer;
+}
 .auto-text{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
